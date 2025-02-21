@@ -1,0 +1,159 @@
+.chat-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Left Sidebar */
+.history-section {
+    width: 25%;
+    background-color: #f1f1f1;
+    padding: 10px;
+    overflow-y: auto;
+    line-height: 6vh;
+    background: #f4f4f4;
+    width: 300px;
+    overflow-x: scroll;
+
+}
+
+.chat-main {
+    /* border: 1px solid black; */
+
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.612);
+}
+
+.first {
+    margin-top: 6px;
+}
+
+.chat-box {
+    /* flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px; */
+    /* border: 1px solid black; */
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-end; */
+    align-items: center;
+    padding: 30px;
+    height: 400px;
+    max-height: 450px;
+    overflow-y: auto;
+    height: 600px;
+
+}
+
+.boder {
+    /* border: 1px solid grey; */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.55);
+
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    color: black;
+    font-family: normal;
+    margin-bottom: -40px;
+}
+
+h2 {
+    display: flex;
+    border-radius: 4px;
+    width: 210px;
+    /* margin-left: 3px; */
+
+}
+
+
+/* ✅ User message (Right side) */
+.chat-message {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 60%;
+    text-align: left;
+    align-self: flex-end;
+    /* ✅ Right side alignment */
+}
+
+/* ✅ Bot message (Left side) */
+.bot-message {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    max-width: 60%;
+    text-align: left;
+    align-self: flex-start;
+    /* ✅ Left side alignment */
+}
+
+.search-bar {
+    display: flex;
+    gap: 20px;
+    width: 70%;
+    margin-left: 25vh;
+
+}
+
+textarea {
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.search-bar button :hover {
+    color: green;
+}
+
+.search-bar {
+    position: relative;
+    width: 80%;
+}
+
+textarea {
+    width: 65%;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 25px;
+    font-size: 20px;
+    height: 60px;
+    resize: none;
+    padding-right: 90px;
+    /* Right side space for button */
+}
+
+.search-bar button {
+    position: absolute;
+    right: 210px;
+    bottom: 25px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

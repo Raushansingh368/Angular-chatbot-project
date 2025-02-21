@@ -1,0 +1,59 @@
+<div class="chat-container">
+  <div class="history-section">
+    <div class="history-box">
+      <h3>Today History</h3>
+      <ul>
+        <p *ngFor="let chat of todayHistory">{{ chat }}</p>
+      </ul>
+    </div>
+    <div class="history-box">
+      <h3>Yesterday History</h3>
+
+      <ul>
+        <li *ngFor="let chat of yesterdayHistory">{{ chat }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="chat-main">
+    <h1 class="first">ChatBot </h1>
+    <h2>How can i help you?</h2>
+    <div class="boder">
+      <div class="chat-box">
+        <div *ngFor="let message of messages"
+          [ngClass]="{'chat-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
+          {{ message.text }}
+        </div>
+      </div>
+
+
+      <!-- <div class="search-bar">
+      <input type="text"  class="pla"    [(ngModel)]="searchQuery" placeholder="Enter your message...." (keyup.enter)="sendMessage()">
+      <button class="btn" (click)="sendMessage()"><i class="fa-solid fa-arrow-up"></i></button>
+    </div> -->
+
+
+
+      <div class="search-bar">
+
+        <textarea type="text" [(ngModel)]="searchQuery" placeholder="Enter your message...."
+          (keyup.enter)="sendMessage()">
+      </textarea>
+        <button class="btn" (click)="sendMessage()"><i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
