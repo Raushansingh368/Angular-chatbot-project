@@ -3,7 +3,6 @@
     height: 100vh;
 }
 
-/* Left Sidebar */
 .history-section {
     width: 25%;
     background-color: #f1f1f1;
@@ -17,7 +16,6 @@
 }
 
 .chat-main {
-    /* border: 1px solid black; */
 
     width: 75%;
     display: flex;
@@ -32,17 +30,11 @@
 }
 
 .chat-box {
-    /* flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px; */
-    /* border: 1px solid black; */
+
 
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    /* align-items: flex-end; */
     align-items: center;
     padding: 30px;
     height: 400px;
@@ -53,7 +45,6 @@
 }
 
 .boder {
-    /* border: 1px solid grey; */
     width: 100%;
     background-color: rgba(255, 255, 255, 0.55);
 
@@ -71,12 +62,10 @@ h2 {
     display: flex;
     border-radius: 4px;
     width: 210px;
-    /* margin-left: 3px; */
 
 }
 
 
-/* ✅ User message (Right side) */
 .chat-message {
     background-color: #007bff;
     color: white;
@@ -86,10 +75,8 @@ h2 {
     max-width: 60%;
     text-align: left;
     align-self: flex-end;
-    /* ✅ Right side alignment */
 }
 
-/* ✅ Bot message (Left side) */
 .bot-message {
     background-color: grey;
     color: white;
@@ -99,7 +86,6 @@ h2 {
     max-width: 60%;
     text-align: left;
     align-self: flex-start;
-    /* ✅ Left side alignment */
 }
 
 .search-bar {
@@ -138,7 +124,6 @@ textarea {
     height: 60px;
     resize: none;
     padding-right: 90px;
-    /* Right side space for button */
 }
 
 .search-bar button {
