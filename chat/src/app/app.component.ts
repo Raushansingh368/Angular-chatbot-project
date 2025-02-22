@@ -24,6 +24,23 @@ export class AppComponent {
 
   constructor(private apiService: ApiService) { }
 
+
+  ngOnInit() {
+    const savedHistory = localStorage.getItem('todayHistory');
+    if (savedHistory) {
+      this.todayHistory = JSON.parse(savedHistory);
+
+
+
+      
+    }
+    
+  }
+
+  
+
+
+
   sendMessage() {
     if (this.searchQuery.trim()) {
 
@@ -31,6 +48,9 @@ export class AppComponent {
       this.todayHistory.unshift(this.searchQuery);
 
 
+      localStorage.setItem('todayHistory', JSON.stringify(this.todayHistory));
+
+      // ✅ Chatbox me message add karo
 
       setTimeout(() => {
         this.messages.push({ text: "Thanks for your message! 😊", sender: 'bot' });
@@ -38,8 +58,12 @@ export class AppComponent {
 
       this.searchQuery = '';
     }
-
   }
-
+  deleteMessage(index: number): void {
+    if (index > -1 && index < this.todayHistory.length) {
+      this.todayHistory.splice(index, 1);
+      localStorage.setItem('todayHistory', JSON.stringify(this.todayHistory));
+    }
+  }
 
 }
