@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -18,8 +17,7 @@ export class AppComponent {
   title = 'AI';
   todayHistory = [''];
   yesterdayHistory = ['Good morning', 'How are you?'];
-  messages: { text: string, sender: string }[] = [];
-  searchQuery: string = '';
+  messages: { text?: string, sender: string, image?: string }[] = []; searchQuery: string = '';
 
 
   constructor(private apiService: ApiService) { }
@@ -29,17 +27,9 @@ export class AppComponent {
     const savedHistory = localStorage.getItem('todayHistory');
     if (savedHistory) {
       this.todayHistory = JSON.parse(savedHistory);
-
-
-
-      
     }
-    
+
   }
-
-  
-
-
 
   sendMessage() {
     if (this.searchQuery.trim()) {
@@ -65,5 +55,17 @@ export class AppComponent {
       localStorage.setItem('todayHistory', JSON.stringify(this.todayHistory));
     }
   }
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file && file.type.startsWith("image/")) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.messages.push({ sender: 'user', image: e.target?.result as string }); // ✅ Image upload in chat
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+
 
 }

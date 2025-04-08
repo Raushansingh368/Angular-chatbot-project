@@ -23,15 +23,15 @@
     justify-content: space-between;
     padding: 20px;
     background-color: rgba(128, 128, 128, 0.612);
+    border-radius: 5px;
 }
 
 .first {
     margin-top: 6px;
+    margin-left: 20px;
 }
 
 .chat-box {
-
-
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -55,13 +55,12 @@ h1 {
     justify-content: center;
     color: black;
     font-family: normal;
-    margin-bottom: -40px;
+    margin-bottom: -70px;
 }
 
 h2 {
     display: flex;
     border-radius: 4px;
-    width: 210px;
 
 }
 
@@ -69,12 +68,29 @@ h2 {
 .chat-message {
     background-color: #007bff;
     color: white;
-    padding: 10px;
+    padding: 9px;
     border-radius: 10px;
-    margin: 5px 0;
-    max-width: 60%;
+    margin: 9px 40PX;
+    max-width: 45%;
     text-align: left;
     align-self: flex-end;
+    line-height: 4px;
+    min-width: 20vh;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: normal;
+
+}
+
+.user-name {
+    margin-left: 120px;
+
+}
+
+.input {
+    margin-right: 100px;
 }
 
 .bot-message {
@@ -82,10 +98,13 @@ h2 {
     color: white;
     padding: 10px;
     border-radius: 10px;
-    margin: 5px 0;
+    margin: 5px 20px;
     max-width: 60%;
     text-align: left;
     align-self: flex-start;
+    line-height: 6px;
+
+
 }
 
 .search-bar {
@@ -107,7 +126,7 @@ textarea::-webkit-scrollbar {
 }
 
 .search-bar button :hover {
-    color: green;
+    color: black;
 }
 
 .search-bar {
@@ -128,7 +147,7 @@ textarea {
 
 .search-bar button {
     position: absolute;
-    right: 210px;
+    right: 20px;
     bottom: 25px;
     width: 40px;
     height: 40px;
@@ -141,4 +160,125 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.history-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history-box li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    word-break: break-word;
+}
+
+.history-box li span {
+    flex-grow: 1;
+    min-width: 0;
+    margin-right: 10px;
+}
+
+.history-box button {
+    background-color: rgba(255, 0, 0, 0.669);
+    border-radius: 6px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+
+    .chat-message,
+    .bot-message {
+        max-width: 80%;
+        font-size: 14px;
+        padding: 8px;
+        margin: 5px 20px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    textarea {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .search-bar button {
+        position: static;
+        width: 50px;
+        height: 50px;
+    }
+
+    .history-section {
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+    }
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 25px;
+    background: #fff;
+    max-width: 500px;
+    width: 100%;
+
+}
+
+.textarea-container {
+    position: relative;
+    flex: 1;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none;
+}
+
+.file-upload-btn {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    background: none;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    color: #666;
+    margin-right: 3vh;
+}
+
+
+
+.chat-message {
+    padding: 5px;
+}
+
+.chat-image {
+    max-width: 50px;
+    display: block;
+    margin-top: 5px;
 }

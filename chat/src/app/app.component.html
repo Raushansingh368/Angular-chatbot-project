@@ -2,14 +2,15 @@
   <div class="history-section">
     <div class="history-box">
       <h3>Today's History</h3>
-  <ul>
-    <li *ngFor="let chat of todayHistory; let i = index">{{ chat }}
-    <button style="background-color:red;"  (click)="deleteMessage(i)">delete</button>  </li>
-    </ul>
+      <ul>
+        <li *ngFor="let chat of todayHistory; let i = index">
+          <span>{{ chat }}</span>
+          <button (click)="deleteMessage(i)">Delete</button>
+        </li>
+      </ul>
     </div>
     <div class="history-box">
       <h3>Yesterday History</h3>
-
       <ul>
         <li *ngFor="let chat of yesterdayHistory">{{ chat }}</li>
       </ul>
@@ -17,36 +18,44 @@
   </div>
 
   <div class="chat-main">
-    <h1 class="first">ChatBot </h1>
-    <h2>How can i help you?</h2>
+    <h1 class="first">ChatBot</h1>
+    <h2>How can I help you?</h2>
+
     <div class="boder">
+      <!-- ✅ Chat Messages Display -->
       <div class="chat-box">
-        <div *ngFor="let message of messages"
+        <div *ngFor="let message of messages" 
           [ngClass]="{'chat-message': message.sender === 'user', 'bot-message': message.sender === 'bot'}">
-          {{ message.text }}
+
+          <strong *ngIf="message.sender === 'user'" class="user-name">User</strong>
+          <strong *ngIf="message.sender === 'bot'" class="bot-name">AI Chatbot</strong>
+
+          <p *ngIf="message.text">{{ message.text }}</p>
+          <img *ngIf="message.image" [src]="message.image" alt="Uploaded Image" class="chat-image" />
         </div>
       </div>
 
+      <!-- ✅ Input & File Upload Section -->
       <div class="search-bar">
+        <div class="textarea-container">
+          <textarea [(ngModel)]="searchQuery" placeholder="Enter your message...." (keyup.enter)="sendMessage()"></textarea>
 
-        <textarea type="text" [(ngModel)]="searchQuery" placeholder="Enter your message...."
-          (keyup.enter)="sendMessage()">
-      </textarea>
-        <button class="btn" (click)="sendMessage()"><i class="fa-solid fa-arrow-up"></i></button>
+          <!-- ✅ File Upload Button (Right Side of Textarea) -->
+          <button class="btn file-upload-btn" (click)="fileInput.click()">
+            <i class="fa-solid fa-paperclip"></i> <!-- Paperclip Icon -->
+          </button>
+
+          <!-- ✅ Hidden File Input -->
+          <input type="file" #fileInput (change)="onFileSelected($event)" class="hidden" accept="image/*">
+        </div>
+
+        <!-- ✅ Send Button -->
+        <button class="btn" (click)="sendMessage()">
+          <i class="fa-solid fa-arrow-up"></i>
+        </button>
       </div>
     </div>
   </div>
-
 </div>
-
-
-
-
-
-
-
-
-
-
 
 <router-outlet></router-outlet>
