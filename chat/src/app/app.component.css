@@ -1,3 +1,4 @@
+
 .chat-container {
     display: flex;
     height: 100vh;
@@ -12,11 +13,9 @@
     background: #f4f4f4;
     width: 300px;
     overflow-x: scroll;
-
 }
 
 .chat-main {
-
     width: 75%;
     display: flex;
     flex-direction: column;
@@ -41,13 +40,11 @@
     max-height: 450px;
     overflow-y: auto;
     height: 600px;
-
 }
 
 .boder {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.55);
-
 }
 
 h1 {
@@ -61,9 +58,7 @@ h1 {
 h2 {
     display: flex;
     border-radius: 4px;
-
 }
-
 
 .chat-message {
     background-color: #007bff;
@@ -81,12 +76,10 @@ h2 {
     overflow-wrap: break-word;
     white-space: normal;
     line-height: normal;
-
 }
 
 .user-name {
     margin-left: 120px;
-
 }
 
 .input {
@@ -103,8 +96,6 @@ h2 {
     text-align: left;
     align-self: flex-start;
     line-height: 6px;
-
-
 }
 
 .search-bar {
@@ -112,7 +103,6 @@ h2 {
     gap: 20px;
     width: 70%;
     margin-left: 25vh;
-
 }
 
 textarea {
@@ -125,7 +115,7 @@ textarea::-webkit-scrollbar {
     display: none;
 }
 
-.search-bar button :hover {
+.search-bar button:hover {
     color: black;
 }
 
@@ -183,7 +173,7 @@ textarea {
 }
 
 .history-box button {
-    background-color: rgba(255, 0, 0, 0.669);
+    background-color: rgba(23, 21, 21, 0.877);
     border-radius: 6px;
     color: white;
     border: none;
@@ -192,40 +182,8 @@ textarea {
     white-space: nowrap;
 }
 
-@media screen and (max-width: 768px) {
-
-    .chat-message,
-    .bot-message {
-        max-width: 80%;
-        font-size: 14px;
-        padding: 8px;
-        margin: 5px 20px;
-    }
-
-    .search-bar {
-        width: 100%;
-        margin-left: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    textarea {
-        width: 90%;
-        font-size: 16px;
-    }
-
-    .search-bar button {
-        position: static;
-        width: 50px;
-        height: 50px;
-    }
-
-    .history-section {
-        width: 100%;
-        height: auto;
-        overflow-y: visible;
-    }
+.history-box button:hover {
+    color: red;
 }
 
 .search-bar {
@@ -237,7 +195,6 @@ textarea {
     background: #fff;
     max-width: 500px;
     width: 100%;
-
 }
 
 .textarea-container {
@@ -262,7 +219,6 @@ textarea {
     position: absolute;
     right: 40px;
     top: 50%;
-    /* transform: translateY(-50%); */
     background: none;
     border: none;
     font-size: 15px;
@@ -270,8 +226,6 @@ textarea {
     color: #666;
     margin-right: 3vh;
 }
-
-
 
 .chat-message {
     padding: 5px;
@@ -281,4 +235,201 @@ textarea {
     max-width: 50px;
     display: block;
     margin-top: 5px;
+}
+
+/* Responsive styles - without changing original structure */
+@media screen and (max-width: 1200px) {
+    .search-bar {
+        width: 70%;
+        margin-left: 15vh;
+    }
+    
+    textarea {
+        width: 60%;
+    }
+    
+    .user-name {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .history-section {
+        width: 30%;
+    }
+    
+    .chat-main {
+        width: 70%;
+    }
+    
+    .search-bar {
+        width: 80%;
+        margin-left: 10vh;
+    }
+    
+    textarea {
+        width: 70%;
+        font-size: 18px;
+    }
+    
+    .chat-message {
+        max-width: 55%;
+        min-width: 15vh;
+    }
+    
+    .bot-message {
+        max-width: 65%;
+    }
+    
+    .user-name {
+        margin-left: 80px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chat-container {
+        /* Keep flex row layout as original */
+        flex-direction: row;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .history-section {
+        width: 200px;
+        min-width: 150px;
+    }
+    
+    .chat-main {
+        width: calc(100% - 200px);
+        padding: 15px;
+    }
+    
+    .chat-box {
+        padding: 15px;
+        height: 500px;
+    }
+    
+    .search-bar {
+        width: 90%;
+        margin-left: 2vh;
+        padding: 15px;
+    }
+    
+    textarea {
+        width: 80%;
+        font-size: 16px;
+        padding: 15px;
+    }
+    
+    .chat-message {
+        max-width: 70%;
+        min-width: 10vh;
+        margin: 7px 20px;
+    }
+    
+    .bot-message {
+        max-width: 70%;
+        margin: 5px 15px;
+    }
+    
+    .user-name {
+        margin-left: 50px;
+    }
+    
+    .input {
+        margin-right: 50px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: -50px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chat-container {
+        /* Keep original layout but adjust sizes */
+        flex-direction: row;
+    }
+    
+    .history-section {
+        width: 120px;
+        min-width: 100px;
+        padding: 5px;
+        line-height: 4vh;
+    }
+    
+    .chat-main {
+        width: calc(100% - 120px);
+        padding: 10px;
+    }
+    
+    .chat-box {
+        padding: 10px;
+        height: 450px;
+    }
+    
+    .search-bar {
+        width: 95%;
+        margin-left: 1vh;
+        padding: 10px;
+    }
+    
+    textarea {
+        width: 85%;
+        font-size: 14px;
+        padding: 10px;
+        height: 50px;
+    }
+    
+    .search-bar button {
+        width: 30px;
+        height: 30px;
+        right: 15px;
+        bottom: 20px;
+        font-size: 16px;
+    }
+    
+    .chat-message {
+        max-width: 80%;
+        min-width: 8vh;
+        margin: 5px 10px;
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .bot-message {
+        max-width: 80%;
+        margin: 5px 10px;
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .user-name {
+        margin-left: 30px;
+    }
+    
+    .input {
+        margin-right: 30px;
+    }
+    
+    .history-box li {
+        padding: 3px;
+        font-size: 12px;
+    }
+    
+    .history-box button {
+        padding: 3px 6px;
+        font-size: 11px;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: -40px;
+    }
+    
+    .file-upload-btn {
+        right: 30px;
+        font-size: 14px;
+    }
 }

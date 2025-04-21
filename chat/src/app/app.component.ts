@@ -15,6 +15,7 @@ import { ApiService } from './api.service';
 })
 export class AppComponent {
   title = 'AI';
+
   todayHistory = [''];
   yesterdayHistory = ['Good morning', 'How are you?'];
   messages: { text?: string, sender: string, image?: string }[] = []; searchQuery: string = '';

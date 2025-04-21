@@ -5,7 +5,7 @@
       <ul>
         <li *ngFor="let chat of todayHistory; let i = index">
           <span>{{ chat }}</span>
-          <button (click)="deleteMessage(i)">Delete</button>
+          <button class="btn" (click)="deleteMessage(i)">Delete</button>
         </li>
       </ul>
     </div>
